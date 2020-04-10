@@ -45,6 +45,8 @@ export const newReducer = (state, action) => {
           return item;
         }
       });
+    case "CLEAR_COMPLETED":
+      return state.filter((item) => item.completed != true);
 
     default:
       return state;

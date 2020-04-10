@@ -22,6 +22,7 @@ function App() {
   const toggleDone = (id) => {
     dispatch({ type: "UPDATE_COMPLETED", payload: id });
   };
+
   return (
     <div className="App">
       <TaskForm
@@ -30,6 +31,10 @@ function App() {
         task={newTask}
         onSubmit={handleSubmit}
       />
+      <button onClick={() => dispatch({ type: "CLEAR_COMPLETED" })}>
+        {" "}
+        Clear
+      </button>
       <div>
         {tasksState.map((item) => {
           return (
