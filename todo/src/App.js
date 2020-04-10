@@ -15,8 +15,8 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hey this is working yaaayy");
     dispatch({ type: "ADDING_TASK", payload: newTask });
+    addNewTask("");
   };
 
   const toggleDone = (id) => {

@@ -25,12 +25,14 @@ export const initialState = [
     id: 38929870234,
   },
 ];
-
+{
+}
 export const newReducer = (state, action) => {
   switch (action.type) {
     case "ADDING_TASK":
       return [
         ...state,
+
         {
           item: action.payload,
           completed: false,
@@ -46,7 +48,7 @@ export const newReducer = (state, action) => {
         }
       });
     case "CLEAR_COMPLETED":
-      return state.filter((item) => item.completed != true);
+      return state.filter((item) => item.completed !== true);
 
     default:
       return state;
